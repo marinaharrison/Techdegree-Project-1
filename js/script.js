@@ -50,13 +50,19 @@ const quotes = [
 }
 ];
 
-console.log(quotes);
+// console.log(quotes);
+// Checked the console to make sure there were no bugs in my Array.
 
 
 /***
  * `getRandomQuote` function
 ***/
+function getRandomQuote() {
+  const randomQuote = Math.floor(Math.random() * quotes.length);
+  return quotes[randomQuote]; 
+}
 
+console.log(getRandomQuote);
 
 
 /***
