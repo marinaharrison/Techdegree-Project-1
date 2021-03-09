@@ -106,7 +106,6 @@ function printQuote() { //Creates the printQuote function.
 }
   if (grabQuote.tags) {
   quoteHtml += `<span class="year">${grabQuote.tags}</span>`;
-
 }
 `</p>`
 
