@@ -28,7 +28,8 @@ const quotes = [
   quote: 'Do or do not, there is no try.',
   source: 'Yoda',
   citation: 'Star Wars: The Empire Strikes Back',
-  year: 1980
+  year: 1980,
+  tags: "#yoda, #starwars"
 },
 {
   quote: 'Rebellions are built on hope.',
@@ -47,12 +48,32 @@ const quotes = [
   source: 'Shmi Skywalker',
   citation: 'Star Wars: Episode I – The Phantom Menace',
   year: 1999
+},
+{
+  quote: 'Sometimes we must let go of our pride and do what is requested of us.',
+  source: 'Padmé Amidala',
+  citation: 'Star Wars: Episode II – Attack of the Clones',
+  year: 2002
+},
+{
+  quote: 'She was more interested in protecting the light than seeming like a hero.',
+  source: 'Princess Leia',
+  citation: 'Star Wars: Episode VIII – The Last Jedi',
+  year: 2017
+},
+{
+  quote: 'Train yourself to let go of everything you fear to lose.',
+  source: 'Yoda',
+  citation: 'Star Wars: Episode V – The Empire Strikes Back',
+  year: 1980,
+  tags: "#yoda, #starwars"
 }
 ];
 
 // console.log(quotes);
-// Checked the console to make sure there were no bugs in my Array.
+// **Checked the console to make sure there were no bugs in my Array.
 
+/*******/
 
 /***
  * `getRandomQuote` function
@@ -64,7 +85,7 @@ function getRandomQuote() { //Creates the getRandomQuote function
 }
 
 // console.log(getRandomQuote);
-// **Checked the console to make sure my function was working properly and pulling random quotes from the array.
+// **Checked the console to make sure my function was working properly.
 
 
 /***
@@ -83,6 +104,10 @@ function printQuote() { //Creates the printQuote function.
   if (grabQuote.year) {
   quoteHtml += `<span class="year">${grabQuote.year}</span>`;
 }
+  if (grabQuote.tags) {
+  quoteHtml += `<span class="year">${grabQuote.tags}</span>`;
+
+}
 `</p>`
 
 //Above code created a variable to store the HTML string in quoteHtml.
@@ -98,4 +123,3 @@ document.getElementById('quote-box').innerHTML = quoteHtml; //Sets the printQuot
 ***/
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-console.log('test');
