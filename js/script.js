@@ -57,18 +57,39 @@ const quotes = [
 /***
  * `getRandomQuote` function
 ***/
-function getRandomQuote() {
-  const randomQuote = Math.floor(Math.random() * quotes.length);
-  return quotes[randomQuote]; 
+
+function getRandomQuote() { //Creates the getRandomQuote function
+  const randomQuote = Math.floor(Math.random() * quotes.length); //Creates a variable that stores a random number from the index of the array.
+  return quotes[randomQuote]; //Returns a random quote object.
 }
 
-console.log(getRandomQuote);
+// console.log(getRandomQuote);
+// **Checked the console to make sure my function was working properly and pulling random quotes from the array.
 
 
 /***
  * `printQuote` function
 ***/
 
+function printQuote() { //Creates the printQuote function.
+  const grabQuote = getRandomQuote(); //Creates variable to call the getRandomQuote function.
+  let quoteHtml = `<p class="quote">${grabQuote.quote}</p>
+                   <p class="source">${grabQuote.source}`;
+
+  if (grabQuote.citation) {
+  quoteHtml += `<span class="citation">${grabQuote.citation}</span>`;
+}
+
+  if (grabQuote.year) {
+  quoteHtml += `<span class="year">${grabQuote.year}</span>`;
+}
+`</p>`
+
+//Above code created a variable to store the HTML string in quoteHtml.
+
+document.getElementById('quote-box').innerHTML = quoteHtml; //Sets the printQuote function to return the HTML string.
+
+};
 
 
 /***
